@@ -4,14 +4,17 @@
 	<meta charset="UTF-8">
 	<meta name="layout" content="main">
 	<title>Document</title>
-	<r:require modules="bs"/>
+	<r:require modules="bs, bsg"/>
 </head>
 <body>
 	<h3><g:message code="family.create.nickname" args="${[person]}"/></h3>
 
 	<ul>
 		<g:each in="${person.nicknames}" var="nickname">
-			<li>${nickname}</li>
+			<li>
+				${nickname}
+				<g:link event="deleteNickname" id="${nickname}"><span class="glyphicon glyphicon-trash"></span></g:link>
+			</li>
 		</g:each>
 	</ul>
 

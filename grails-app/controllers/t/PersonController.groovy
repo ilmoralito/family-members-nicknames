@@ -43,6 +43,10 @@ class PersonController {
     			}
    			}.to "addNicknames"
 
+   			on("deleteNickname") {
+   				flow.person.removeFromNicknames(params.id)
+			}.to "addNicknames"
+
    			on("end").to "end"
     	}
 

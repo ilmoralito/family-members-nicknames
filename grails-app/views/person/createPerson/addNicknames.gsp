@@ -4,10 +4,10 @@
 	<meta charset="UTF-8">
 	<meta name="layout" content="main">
 	<title>Document</title>
-	<r:require module="bs"/>
+	<r:require modules="bs"/>
 </head>
 <body>
-	<h3>Create kincknames for ${person}</h3>
+	<h3><g:message code="family.create.nickname" args="${[person]}"/></h3>
 
 	<ul>
 		<g:each in="${person.nicknames}" var="nickname">
@@ -17,12 +17,12 @@
 
 	<g:form>
 		<div class="form-group">
-			<label for="nickname">Nickname</label>
+			<label for="nickname"><g:message code="family.nickname"/></label>
 			<g:textField name="nickname" class="form-control" autofocus="true"/>
 		</div>
 
-		<g:submitButton name="add" value="Add nickname" class="btn btn-primary"/>
-		<g:submitButton name="end" value="Terminar" class="btn btn-primary"/>
+		<g:submitButton name="add" value="${g.message(code:'family.add.nickname')}" class="btn btn-primary"/>
+		<g:submitButton name="end" value="${g.message(code:'family.done')}" class="btn btn-primary"/>
 	</g:form>
 </body>
 </html>
